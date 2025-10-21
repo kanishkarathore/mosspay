@@ -1,0 +1,103 @@
+{% extends 'vendor_layout.html' %}
+{% block title %}Generate Bill{% endblock %}
+{% block vendor_content %}
+    <h2>Generate Digital Bill</h2>
+    <p class="page-subtitle">Search for items to add them to the bill.</p>
+
+    <div class="bill-generator-container">
+        <!-- Left Side: Item Selection -->
+        <div class="item-selection-panel">
+            <div class="search-bar">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="item-search" placeholder="Search item...">
+            </div>
+            <h4>Your Items</h4>
+            <div class="item-list">
+                <!-- Demo Items -->
+                <div class="item-to-add" data-name="Organic Apples" data-price="150.00">
+                    <span>Organic Apples (₹150.00/kg)</span>
+                    <button class="add-item-btn">+</button>
+                </div>
+                <div class="item-to-add" data-name="Jute Bag" data-price="250.00">
+                    <span>Jute Bag (₹250.00/pc)</span>
+                    <button class="add-item-btn">+</button>
+                </div>
+                <div class="item-to-add" data-name="Cold Coffee" data-price="120.00">
+                    <span>Cold Coffee (₹120.00/pc)</span>
+                    <button class="add-item-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Bill Summary -->
+        <div class="bill-summary-panel">
+            <h4>Current Bill</h4>
+            <div id="bill-items-summary" class="bill-items-summary">
+                <p class="empty-bill">No items added yet.</p>
+            </div>
+            <div class="bill-total">
+                <span>Total</span>
+                <span id="bill-total-amount">₹0.00</span>
+            </div>
+            <button id="done-btn" class="btn-primary" disabled>Done</button>
+            <div id="final-actions" class="final-actions" style="display: none;">
+                <button class="btn-secondary">Generate QR</button>
+                <button class="btn-primary">Send on Phone</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const billItems = new Map();
+            const billSummaryEl = document.getElementById('bill-items-summary');
+            const totalAmountEl = document.getElementById('bill-total-amount');
+            const doneBtn = document.getElementById('done-btn');
+            const finalActions = document.getElementById('final-actions');
+
+            document.querySelectorAll('.add-item-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const itemDiv = e.target.closest('.item-to-add');
+                    const itemName = itemDiv.dataset.name;
+                    const itemPrice = parseFloat(itemDiv.dataset.price);
+
+                    const quantity = prompt(`Enter quantity for ${itemName}:`, '1');
+                    if (quantity && !isNaN(quantity) && quantity > 0) {
+                        const numericQuantity = parseFloat(quantity);
+                        billItems.set(itemName, { price: itemPrice, qty: numericQuantity });
+                        updateBill();
+                    }
+                });
+            });
+
+            function updateBill() {
+                billSummaryEl.innerHTML = '';
+                let total = 0;
+
+                if (billItems.size === 0) {
+                    billSummaryEl.innerHTML = '<p class="empty-bill">No items added yet.</p>';
+                    doneBtn.disabled = true;
+                } else {
+                    for (const [name, { price, qty }] of billItems) {
+                        const itemTotal = price * qty;
+                        total += itemTotal;
+                        const itemEl = document.createElement('div');
+                        itemEl.className = 'bill-summary-item';
+                        itemEl.innerHTML = `
+                            <span class="item-name">${qty} x ${name}</span>
+                            <span class="item-price">₹${itemTotal.toFixed(2)}</span>
+                        `;
+                        billSummaryEl.appendChild(itemEl);
+                    }
+                    doneBtn.disabled = false;
+                }
+                totalAmountEl.innerText = `₹${total.toFixed(2)}`;
+            }
+            
+            doneBtn.addEventListener('click', () => {
+                doneBtn.style.display = 'none';
+                finalActions.style.display = 'flex';
+            });
+        });
+    </script>
+{% endblock %}

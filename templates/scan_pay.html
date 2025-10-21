@@ -1,0 +1,16 @@
+{% extends 'dashboard_layout.html' %}
+{% block title %}Scan & Pay{% endblock %}
+{% block dashboard_content %}
+    <div class="scan-pay-container">
+        <div class="camera-viewfinder">
+            <!-- These divs create the corner brackets -->
+            <div class="corner top-left"></div>
+            <div class="corner top-right"></div>
+            <div class="corner bottom-left"></div>
+            <div class="corner bottom-right"></div>
+            <!-- This is the animated scanning line -->
+            <div class="scan-line"></div>
+        </div>
+        <p class="scan-instruction">Position the QR code within the frame</p>
+    </div>
+{% endblock %}

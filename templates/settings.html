@@ -1,0 +1,75 @@
+{% extends 'dashboard_layout.html' %}
+{% block title %}Settings{% endblock %}
+{% block dashboard_content %}
+    <h2>Settings</h2>
+
+    <div class="settings-container">
+        <!-- Account Section -->
+        <div class="settings-section">
+            <div class="section-header">
+                <h4>Account</h4>
+                <p>Manage your account settings and set e-mail preferences.</p>
+            </div>
+            <div class="settings-list">
+                <a href="#" class="settings-item">
+                    <span>Edit Profile</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Notifications Section -->
+        <div class="settings-section">
+            <div class="section-header">
+                <h4>Notifications</h4>
+                <p>Manage how you receive notifications.</p>
+            </div>
+            <div class="settings-list">
+                <div class="settings-item">
+                    <span>Push Notifications</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="settings-item">
+                    <span>Email Updates</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payments Section -->
+        <div class="settings-section">
+            <div class="section-header">
+                <h4>Payments</h4>
+                <p>Manage your payment methods.</p>
+            </div>
+            <div class="settings-list">
+                <a href="#" class="settings-item">
+                    <span>Manage Payment Methods</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- About & Help Section -->
+        <div class="settings-section">
+            <div class="section-header">
+                <h4>About & Help</h4>
+                <p>Learn more about MossPay and get help.</p>
+            </div>
+            <div class="settings-list">
+                <a href="#" class="settings-item">
+                    <span>Privacy Policy</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+        </div>
+        
+        <p class="app-version">App Version 2.0.22</p>
+    </div>
+{% endblock %}

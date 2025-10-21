@@ -1,0 +1,14 @@
+{% extends 'vendor_layout.html' %}
+{% block title %}Scan & Pay (Vendor){% endblock %}
+{% block vendor_content %}
+    <div class="scan-pay-container">
+        <div class="camera-viewfinder">
+            <!-- These divs create the corner brackets --><div class="corner top-left"></div>
+            <div class="corner top-right"></div>
+            <div class="corner bottom-left"></div>
+            <div class="corner bottom-right"></div>
+            <!-- This is the animated scanning line --><div class="scan-line"></div>
+        </div>
+        <p class="scan-instruction">Scan customer's QR code</p>
+    </div>
+{% endblock %}

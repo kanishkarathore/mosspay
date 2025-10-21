@@ -1,0 +1,72 @@
+{% extends 'dashboard_layout.html' %}
+
+{% block title %}Eco-Advisor{% endblock %}
+
+{% block dashboard_content %}
+    <div class="chat-container">
+        <header class="chat-header">
+            <div class="chat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.92V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10.92a2 2 0 0 0 .93 1.76l8.07 4.68a2 2 0 0 0 2 0l8.07-4.68A2 2 0 0 0 21 16.92z"></path><path d="M12 22V12"></path></svg>
+            </div>
+            <h2>Eco-Advisor</h2>
+        </header>
+
+        <div class="chat-history" id="chat-history">
+            <!-- Initial Greeting from the bot -->
+            <div class="chat-message bot-message">
+                <div class="message-bubble">
+                    Hello! I'm your Eco-Advisor. You can ask me things like, "Where can I find sustainable fashion?" or "What's an impactful purchase?"
+                </div>
+            </div>
+        </div>
+
+        <footer class="chat-input-area">
+            <form id="chat-form">
+                <input type="text" id="message-input" placeholder="Ask me anything about green shopping..." autocomplete="off" required>
+                <button type="submit" class="send-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </form>
+        </footer>
+    </div>
+
+    <script>
+        const chatForm = document.getElementById('chat-form');
+        const messageInput = document.getElementById('message-input');
+        const chatHistory = document.getElementById('chat-history');
+
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const userMessage = messageInput.value.trim();
+
+            if (userMessage) {
+                // 1. Display the user's message
+                addMessage(userMessage, 'user-message');
+
+                // 2. Clear the input field
+                messageInput.value = '';
+
+                // 3. Simulate a bot response (for now, it just echoes)
+                setTimeout(() => {
+                    const botResponse = `You asked: "${userMessage}". I am still learning, but I will be able to answer this soon!`;
+                    addMessage(botResponse, 'bot-message');
+                }, 1000);
+            }
+        });
+
+        function addMessage(message, className) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${className}`;
+            
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.className = 'message-bubble';
+            bubbleDiv.innerText = message;
+            
+            messageDiv.appendChild(bubbleDiv);
+            chatHistory.appendChild(messageDiv);
+
+            // Scroll to the bottom to see the latest message
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+    </script>
+{% endblock %}

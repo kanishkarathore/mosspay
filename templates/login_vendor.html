@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}Vendor Login{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <header class="login-header">
+        <h1>MossPay for Business</h1>
+    </header>
+
+    <div class="login-box">
+        <h3>Welcome, Green Partner!</h3>
+        <p class="subtitle">Log in to manage your business profile and offers.</p>
+        <form action="{{ url_for('login_vendor') }}" method="post">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@business.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+
+    <div class="login-footer">
+        <p>New here? <a href="{{ url_for('register_business') }}">Register Your Business</a></p>
+    </div>
+</div>
+{% endblock %}

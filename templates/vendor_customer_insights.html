@@ -1,0 +1,97 @@
+{% extends 'vendor_layout.html' %}
+{% block title %}Customer Insights{% endblock %}
+{% block vendor_content %}
+    <h2>Customer Insights</h2>
+    <p class="page-subtitle">Understand your eco-conscious customer base better.</p>
+
+    <!-- Main Trend Chart -->
+    <div class="card chart-card">
+        <h3>Offer Redemptions Trend</h3>
+        <p class="chart-subtitle">Shows the number of your offers redeemed over the past 6 months.</p>
+        <div class="chart-placeholder">
+            <div class="chart-axis y-axis">
+                <span>320</span><span>240</span><span>160</span><span>80</span><span>0</span>
+            </div>
+            <div class="chart-area-container">
+                <div class="chart-area"></div>
+            </div>
+            <div class="chart-axis x-axis">
+                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Insight Cards Grid -->
+    <div class="insights-grid">
+        <!-- New vs Repeat Customers -->
+        <div class="card insight-card">
+            <h4>Customer Demographics</h4>
+            <p class="chart-subtitle">New vs. Repeat customers who have redeemed your offers.</p>
+            <div class="pie-chart-container">
+                <div class="pie-chart new-vs-repeat"></div>
+                <div class="pie-chart-legend">
+                    <div class="legend-item new-customer"><span>New Customers (40%)</span></div>
+                    <div class="legend-item repeat-customer"><span>Repeat Customers (60%)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Redemption Times -->
+        <div class="card insight-card">
+            <h4>Popular Redemption Times</h4>
+            <p class="chart-subtitle">Which times of day are your offers most popular?</p>
+            <div class="bar-chart-container">
+                <div class="bar-chart-bar" style="height: 30%;"><span>Morning</span></div>
+                <div class="bar-chart-bar" style="height: 60%;"><span>Afternoon</span></div>
+                <div class="bar-chart-bar" style="height: 25%;"><span>Evening</span></div>
+            </div>
+        </div>
+
+        <!-- Customer Age Demographics -->
+        <div class="card insight-card">
+            <h4>Age Demographics</h4>
+            <p class="chart-subtitle">Age distribution of your customers.</p>
+            <div class="bar-chart-container">
+                <div class="bar-chart-bar" style="height: 40%;"><span>18-24</span></div>
+                <div class="bar-chart-bar" style="height: 70%;"><span>25-34</span></div>
+                <div class="bar-chart-bar" style="height: 50%;"><span>35-44</span></div>
+                <div class="bar-chart-bar" style="height: 20%;"><span>45+</span></div>
+            </div>
+        </div>
+
+        <!-- Customer Gender Demographics -->
+        <div class="card insight-card">
+            <h4>Gender Demographics</h4>
+            <p class="chart-subtitle">Gender distribution of your customers.</p>
+             <div class="pie-chart-container">
+                <div class="pie-chart gender"></div>
+                <div class="pie-chart-legend">
+                    <div class="legend-item male-customer"><span>Male (45%)</span></div>
+                    <div class="legend-item female-customer"><span>Female (55%)</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Redeemed Offers Section -->
+    <div class="profile-section">
+        <div class="section-top-bar">
+            <h3>Top Redeemed Offers</h3>
+            <p class="section-description">Your most popular offers among customers.</p>
+        </div>
+        <div class="offer-list">
+            <div class="offer-item">
+                <div class="offer-details">
+                    <h4>20% off on all organic vegetables</h4>
+                    <div class="offer-meta"><span>388 redemptions</span></div>
+                </div>
+            </div>
+            <div class="offer-item">
+                <div class="offer-details">
+                    <h4>Free tote bag on orders over ₹1000</h4>
+                    <div class="offer-meta"><span>315 redemptions</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

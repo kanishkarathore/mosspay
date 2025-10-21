@@ -1,0 +1,89 @@
+{% extends 'dashboard_layout.html' %}
+
+{% block title %}Refer & Earn{% endblock %}
+
+{% block dashboard_content %}
+    <div class="referral-container">
+        <h2>Share the Green, Earn the Green!</h2>
+        <p class="page-subtitle">Invite your friends to join the green revolution with your unique code and you both get 50 MossCoins!</p>
+
+        <!-- Referral Code Box -->
+        <div class="referral-code-box">
+            <span class="card-label">Your Unique Referral Code</span>
+            <div class="code-display">
+                <span id="referral-code">GREENSPROUT25</span>
+                <button id="copy-btn">Copy</button>
+            </div>
+        </div>
+        
+        <!-- Share Buttons -->
+        <div class="share-section">
+            <span class="section-title">Share with Friends</span>
+            <div class="share-buttons">
+                <a href="#" class="share-btn whatsapp">WhatsApp</a>
+                <a href="#" class="share-btn facebook">Facebook</a>
+                <a href="#" class="share-btn share-link">Share Link</a>
+            </div>
+        </div>
+
+        <!-- How it Works -->
+        <div class="how-it-works-section">
+            <span class="section-title">How It Works</span>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-details">
+                        <h4>Share the Code</h4>
+                        <p>Share your unique referral code with friends and family via social media or messaging.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-details">
+                        <h4>Friend Signs Up</h4>
+                        <p>Your friend uses your code to sign up and makes their first eco-friendly transaction.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-details">
+                        <h4>You Both Earn Rewards</h4>
+                        <p>Once the purchase is verified, you both receive 50 MossCoins credited to your wallet!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Referral Status -->
+        <div class="referral-status-section">
+            <span class="section-title">Your Referral Status</span>
+            <div class="referral-list">
+                <div class="referral-item">
+                    <span class="friend-name">John Doe</span>
+                    <span class="status-badge pending">Pending</span>
+                </div>
+                <div class="referral-item">
+                    <span class="friend-name">Jane Smith</span>
+                    <span class="status-badge success">Success</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle the copy button functionality
+        const copyBtn = document.getElementById('copy-btn');
+        const referralCode = document.getElementById('referral-code').innerText;
+
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(referralCode).then(() => {
+                copyBtn.innerText = 'Copied!';
+                setTimeout(() => {
+                    copyBtn.innerText = 'Copy';
+                }, 2000); // Revert back to 'Copy' after 2 seconds
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        });
+    </script>
+{% endblock %}

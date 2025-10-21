@@ -1,0 +1,72 @@
+{% extends 'dashboard_layout.html' %}
+
+{% block title %}Log Purchase{% endblock %}
+
+{% block dashboard_content %}
+    <h2>Your Purchase History</h2>
+    <p class="page-subtitle">Search for a past bill or log a new one.</p>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" placeholder="Search your Bill...">
+    </div>
+
+<!-- ... (keep the h2, p, and search-bar divs as they are) ... -->
+
+<!-- REPLACE the old bill-list div with this new one -->
+<div class="bill-list">
+    <h4>Pending Actions</h4>
+
+    <!-- Demo Bill 1 (Open by default) -->
+    <div class="bill-item is-open">
+        <div class="bill-main-content">
+            <div class="bill-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div class="bill-details">
+                <h4>Indian Coffee House</h4>
+                <p>Products: Cold Coffee, Sandwich, Cutlet</p>
+            </div>
+        </div>
+        <div class="bill-expanded-content">
+            <a href="#" class="btn btn-primary log-purchase-btn">Log Purchase</a>
+        </div>
+    </div>
+
+    <h4>Verified Purchases</h4>
+
+    <!-- Demo Bill 2 (Verified) -->
+    <div class="bill-item">
+        <div class="bill-info">
+            <div class="bill-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div class="bill-details">
+                <h4>GreenLeaf Goods</h4>
+                <p>Products: Organic Vegetables, Tofu, Almond Milk</p>
+            </div>
+        </div>
+        <div class="bill-status verified">
+            Verified
+        </div>
+    </div>
+
+    <!-- Demo Bill 3 (Verified) -->
+    <div class="bill-item">
+        <div class="bill-info">
+             <div class="bill-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div class="bill-details">
+                <h4>Eco Threads</h4>
+                <p>Products: Cotton T-Shirt, Jute Bag</p>
+            </div>
+        </div>
+        <div class="bill-status verified">
+            Verified
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'vendor_layout.html' %}
+{% block title %}My Subscription{% endblock %}
+{% block vendor_content %}
+    <h2>My Subscription</h2>
+    
+    <!-- Current Plan Section -->
+    <div class="profile-section">
+        <div class="section-top-bar">
+            <h3>Your Current Plan: Basic (Free)</h3>
+        </div>
+        <p class="section-description">You are currently on the free plan, upgrade to unlock powerful tools to grow your business.</p>
+        <ul class="plan-features-list">
+            <li>Public business profile</li>
+            <li>Create offers for the marketplace</li>
+            <li>View basic analytics</li>
+        </ul>
+        <a href="#" class="action-btn-primary upgrade-btn">Upgrade to Premium</a>
+    </div>
+
+    <!-- Compare Plans Section -->
+    <div class="profile-section">
+         <div class="section-top-bar">
+            <h3>Compare Plans</h3>
+            <p class="section-description">Find the plan that's right for you.</p>
+        </div>
+        <table class="compare-plans-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Basic (Free)</th>
+                    <th>Premium (Plus)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Business Profile & Listing</td>
+                    <td class="check-mark">✔</td>
+                    <td class="check-mark">✔</td>
+                </tr>
+                <tr>
+                    <td>Create Marketplace Offers</td>
+                    <td class="check-mark">✔</td>
+                    <td class="check-mark">✔</td>
+                </tr>
+                 <tr>
+                    <td>Basic Customer Analytics</td>
+                    <td class="check-mark">✔</td>
+                    <td class="check-mark">✔</td>
+                </tr>
+                <tr>
+                    <td>Priority Ranking in App</td>
+                    <td class="cross-mark">✘</td>
+                    <td class="check-mark">✔</td>
+                </tr>
+                <tr>
+                    <td>MossCoin Campaign Tools</td>
+                    <td class="cross-mark">✘</td>
+                    <td class="check-mark">✔</td>
+                </tr>
+                <tr>
+                    <td>Detailed Customer Insights</td>
+                    <td class="cross-mark">✘</td>
+                    <td class="check-mark">✔</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
