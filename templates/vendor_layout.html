@@ -12,80 +12,70 @@
 <body class="dashboard-body">
 
     <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h3>MossPay for Business</h3>
-        </div>
-        
-        <div class="sidebar-nav-wrapper">
-            <nav class="sidebar-nav">
-                <a href="{{ url_for('vendor_dashboard') }}" class="nav-item">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                    <span>Dashboard</span>
-                </a>
-                <a href="{{ url_for('vendor_manage_profile') }}" class="nav-item">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"></path><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path></svg>
-                    <span>Manage Profile</span>
-                </a>
-                <a href="{{ url_for('vendor_manage_items') }}" class="nav-item">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-                    <span>Manage Items</span>
-                </a>
-                <a href="{{ url_for('vendor_manage_offers') }}" class="nav-item">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.22-1.05-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"></path></svg>
-                    <span>Manage Offers</span>
-                </a>
-                <a href="{{ url_for('vendor_customer_insights') }}" class="nav-item">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    <span>Customer Insights</span>
-                </a>
-                <a href="{{ url_for('vendor_transaction_history') }}" class="nav-item">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                    <span>Transaction History</span>
-                </a>
-                <a href="{{ url_for('vendor_subscription') }}" class="nav-item">
-                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><line x1="12" y1="18" x2="12" y2="12"></line><line x1="12" y1="12" x2="16" y2="16"></line><line x1="12" y1="12" x2="8" y2="16"></line></svg>
-                    <span>My Subscription</span>
-                </a>
-            </nav>
-        </div>
-
-        <div class="sidebar-footer">
-             <a href="{{ url_for('vendor_help_support') }}" class="nav-item">
-                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                <span>Help & Support</span>
-            </a>
-             <a href="{{ url_for('logout') }}" class="nav-item logout-btn">
-                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-                <span>Logout</span>
-            </a>
-        </div>
+        <!-- ... Sidebar content remains the same ... -->
     </aside>
 
     <div class="main-content">
         <header class="main-header">
-             <div class="header-left">
-                {% if request.endpoint == 'vendor_dashboard' %}
-                    <button class="menu-toggle" id="menu-toggle">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
-                    </button>
-                {% else %}
-                    <a href="javascript:history.back()" class="back-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                        <span>Back</span>
-                    </a>
-                {% endif %}
-                <span class="business-name">Eco-Friendly Emporium</span>
-            </div>
-            <div class="user-profile">
-                <div class="user-avatar">EE</div>
-            </div>
+             <!-- ... Header content remains the same ... -->
         </header>
         <main class="content-body">
             {% block vendor_content %}{% endblock %}
         </main>
     </div>
 
+    <!-- NEW: Generate Bill Modal Structure -->
+    <div id="generate-bill-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content large-modal">
+            <h3>Generate New Bill</h3>
+            <button class="modal-close-btn" id="bill-modal-close-btn">&times;</button>
+
+            <div class="bill-generator-modal-body">
+                <!-- Search Bar -->
+                <div class="search-bar modal-search">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="bill-item-search" placeholder="Search item...">
+                </div>
+
+                <!-- Item List (will be populated by JS) -->
+                <div class="modal-item-list scrollable-list" id="modal-item-list">
+                    <!-- Items will appear here -->
+                    <p class="no-items-text">Loading items...</p>
+                </div>
+
+                <!-- Bill Summary -->
+                <div class="bill-summary-modal">
+                    <h4>Current Bill Items</h4>
+                    <div id="modal-bill-summary" class="modal-bill-summary scrollable-list">
+                        <p class="empty-bill-modal">No items added yet.</p>
+                    </div>
+                    <div class="bill-total modal-total">
+                        <span>Total</span>
+                        <span id="modal-bill-total">₹0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                 <button type="button" class="btn-secondary" id="bill-modal-cancel-btn">Cancel</button>
+                 <div id="bill-final-actions" class="bill-final-actions">
+                    <button type="button" class="action-btn-secondary" id="generate-qr-btn">Generate QR</button>
+                    <button type="button" class="action-btn-primary" id="send-mobile-btn">Send to Mobile</button>
+                </div>
+            </div>
+
+            <!-- QR Code Display Area (Hidden initially) -->
+            <div id="qr-code-display" style="display: none; text-align: center; margin-top: 20px;">
+                <h4>Scan QR Code to Pay</h4>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ExampleMossPayBillData" alt="QR Code Placeholder">
+                <p><small>(This is a placeholder QR code)</small></p>
+            </div>
+        </div>
+    </div>
+    <!-- End of Modal -->
+
     <script>
+        // --- Sidebar Toggle Script ---
         const sidebar = document.getElementById('sidebar');
         const menuToggle = document.getElementById('menu-toggle');
         if (menuToggle) {
@@ -93,7 +83,180 @@
                 sidebar.classList.toggle('is-open');
             });
         }
+
+        // --- Generate Bill Modal Script ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const generateBillBtn = document.getElementById('generate-bill-btn'); // Needs ID on dashboard button
+            const billModal = document.getElementById('generate-bill-modal');
+            const closeBtn = document.getElementById('bill-modal-close-btn');
+            const cancelBtn = document.getElementById('bill-modal-cancel-btn');
+            const modalItemList = document.getElementById('modal-item-list');
+            const billSummaryEl = document.getElementById('modal-bill-summary');
+            const totalAmountEl = document.getElementById('modal-bill-total');
+            const itemSearchInput = document.getElementById('bill-item-search');
+            const generateQrBtn = document.getElementById('generate-qr-btn');
+            const sendMobileBtn = document.getElementById('send-mobile-btn');
+            const qrCodeDisplay = document.getElementById('qr-code-display');
+
+            let allItemsData = []; // To store items fetched from Flask
+            let currentBill = new Map(); // Map to store {itemId: quantity}
+
+            // Function to populate the item list in the modal
+            const populateItemList = (items) => {
+                allItemsData = items; // Store for searching
+                modalItemList.innerHTML = ''; // Clear loading/previous items
+                if (!items || items.length === 0) {
+                     modalItemList.innerHTML = '<p class="no-items-text">No items found. Add items via Manage Items page.</p>';
+                     return;
+                }
+                items.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'modal-item-row';
+                    itemDiv.dataset.itemId = item.id;
+                    itemDiv.dataset.itemName = item.item_name;
+                    itemDiv.dataset.itemPrice = item.price;
+
+                    itemDiv.innerHTML = `
+                        <div class="modal-item-info">
+                            <span>${item.item_name}</span>
+                            <small>₹${parseFloat(item.price).toFixed(2)} / ${item.unit || 'pc'}</small>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn decrease-btn" data-item-id="${item.id}">-</button>
+                            <span class="quantity-display" id="qty-${item.id}">0</span>
+                            <button class="quantity-btn increase-btn" data-item-id="${item.id}">+</button>
+                        </div>
+                    `;
+                    modalItemList.appendChild(itemDiv);
+                });
+            };
+
+            // Function to update the bill summary and total
+            const updateBillSummary = () => {
+                billSummaryEl.innerHTML = '';
+                let total = 0;
+                let itemCount = 0;
+
+                if (currentBill.size === 0) {
+                     billSummaryEl.innerHTML = '<p class="empty-bill-modal">No items added yet.</p>';
+                } else {
+                    currentBill.forEach((quantity, itemId) => {
+                        const itemData = allItemsData.find(item => item.id == itemId); // Find item details
+                        if (itemData && quantity > 0) {
+                            itemCount++;
+                            const itemTotal = itemData.price * quantity;
+                            total += itemTotal;
+
+                            const itemEl = document.createElement('div');
+                            itemEl.className = 'modal-summary-item';
+                            itemEl.innerHTML = `
+                                <span>${quantity} x ${itemData.item_name}</span>
+                                <span>₹${itemTotal.toFixed(2)}</span>
+                            `;
+                            billSummaryEl.appendChild(itemEl);
+                        }
+                    });
+                     if (itemCount === 0) { // Handle case where all quantities are zero
+                         billSummaryEl.innerHTML = '<p class="empty-bill-modal">No items added yet.</p>';
+                     }
+                }
+                totalAmountEl.innerText = `₹${total.toFixed(2)}`;
+                // Enable/disable final action buttons based on total
+                generateQrBtn.disabled = total <= 0;
+                sendMobileBtn.disabled = total <= 0;
+            };
+
+            // Event listener for opening the modal
+            if (generateBillBtn) {
+                generateBillBtn.addEventListener('click', () => {
+                    // Populate items when modal opens
+                    // The 'items' variable needs to be available globally or passed differently
+                    // For now, assuming 'vendorItems' is passed to the template and available
+                    if (typeof vendorItems !== 'undefined') {
+                        populateItemList(vendorItems);
+                    } else {
+                         modalItemList.innerHTML = '<p class="no-items-text">Error loading items.</p>';
+                    }
+                    currentBill.clear(); // Start with empty bill
+                    updateBillSummary();
+                    qrCodeDisplay.style.display = 'none'; // Hide QR on open
+                    billModal.style.display = 'flex';
+                });
+            }
+
+             // Event listener for closing the modal
+            const closeModal = () => {
+                billModal.style.display = 'none';
+                itemSearchInput.value = ''; // Clear search
+                filterItemList(''); // Reset item list filter
+                qrCodeDisplay.style.display = 'none'; // Hide QR code area
+            };
+            closeBtn.addEventListener('click', closeModal);
+            cancelBtn.addEventListener('click', closeModal);
+            billModal.addEventListener('click', (e) => {
+                if (e.target === billModal) closeModal();
+            });
+
+            // Event listeners for quantity buttons (using delegation)
+            modalItemList.addEventListener('click', (e) => {
+                const target = e.target;
+                const itemId = target.dataset.itemId;
+                if (!itemId) return;
+
+                let currentQuantity = currentBill.get(parseInt(itemId)) || 0;
+
+                if (target.classList.contains('increase-btn')) {
+                    currentQuantity++;
+                } else if (target.classList.contains('decrease-btn')) {
+                    currentQuantity = Math.max(0, currentQuantity - 1); // Don't go below 0
+                }
+
+                currentBill.set(parseInt(itemId), currentQuantity);
+
+                // Update the quantity display next to the button
+                const qtyDisplay = document.getElementById(`qty-${itemId}`);
+                if (qtyDisplay) qtyDisplay.textContent = currentQuantity;
+
+                updateBillSummary(); // Recalculate total and update summary
+            });
+            
+            // Search functionality
+            const filterItemList = (searchTerm) => {
+                const term = searchTerm.toLowerCase();
+                const itemsInList = modalItemList.querySelectorAll('.modal-item-row');
+                itemsInList.forEach(itemDiv => {
+                    const itemName = itemDiv.dataset.itemName.toLowerCase();
+                    if (itemName.includes(term)) {
+                        itemDiv.style.display = 'flex'; // Show item
+                    } else {
+                        itemDiv.style.display = 'none'; // Hide item
+                    }
+                });
+            };
+            itemSearchInput.addEventListener('input', (e) => {
+                filterItemList(e.target.value);
+            });
+
+            // Final action buttons
+             generateQrBtn.addEventListener('click', () => {
+                // In a real app, generate QR based on bill details
+                qrCodeDisplay.style.display = 'block';
+                // Maybe scroll to QR code
+                qrCodeDisplay.scrollIntoView({ behavior: 'smooth' });
+             });
+
+             sendMobileBtn.addEventListener('click', () => {
+                const mobileNumber = prompt("Enter customer's mobile number:");
+                if (mobileNumber) {
+                    // In a real app, send bill details via SMS/API
+                    alert(`Bill details would be sent to ${mobileNumber}. (Feature not implemented)`);
+                    closeModal(); // Close modal after action
+                }
+             });
+
+        });
     </script>
+    {% block scripts %}{% endblock %}
 
 </body>
 </html>

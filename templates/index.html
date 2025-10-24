@@ -1,43 +1,50 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MossPay: Green Rewards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Georgia:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="center-layout-body"> <!-- Apply the centering class HERE -->
+    <div class="landing-page"> <!-- This div holds the content -->
+        <header class="landing-header">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="MossPay Logo">
+            </div>
+            <h1 class="app-title">MossPay</h1>
+            <p class="tagline">Your Carbon Wallet</p>
+        </header>
 
-{% block title %}Your Carbon Wallet{% endblock %}
-
-{% block content %}
-<div class="landing-page">
-    <header class="landing-header">
-        <h1>MossPay</h1>
-        <p>Your Carbon Wallet</p>
-    </header>
-
-    <main class="landing-main">
-        <h2>Earn Rewards for Green Purchases</h2>
-        <p class="subtitle">Shop from sustainable MSMEs, save the planet, and earn MossCoins.</p>
+        <h2 class="main-headline">Earn Rewards for Green Purchases</h2>
+        <p class="description-text">
+            Shop from sustainable MSMEs, save the planet, and earn MossCoins.
+        </p>
 
         <div class="features-grid">
             <div class="feature-item">
-                <!-- SVG Icon for a coin -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4h-6"></path><path d="M12 18V6"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
                 <h3>Earn MossCoins</h3>
             </div>
             <div class="feature-item">
-                <!-- SVG Icon for tracking CO2 -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 16.9A9 9 0 1 1 8.1 3.5h2.3a9 9 0 0 1 11.1 13.4z"></path><path d="m9.5 14.5 3-3-3-3"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-leaf"><path d="M17 21l-7-7 7-7 7 7-7 7zM4 14h6a9 9 0 0 0 9-9v-3"></path></svg>
                 <h3>Track CO₂ Saved</h3>
             </div>
             <div class="feature-item">
-                <!-- SVG Icon for a leaderboard -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17h4v-2.34"></path><path d="M8 17h8"></path><path d="M12 12v2.66"></path><path d="m6 9 6-7 6 7"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.89"></polyline></svg>
                 <h3>Eco Leaderboard</h3>
             </div>
         </div>
-    </main>
 
-    <footer class="landing-footer">
         <div class="action-buttons">
             <a href="{{ url_for('login_user') }}" class="btn btn-primary">Continue as a User</a>
             <a href="{{ url_for('login_vendor') }}" class="btn btn-secondary">Continue as a Vendor</a>
         </div>
-        <p class="tagline">Join the green revolution today!</p>
-    </footer>
-</div>
-{% endblock %}
+
+        <p class="footer-text">Join the green revolution today!</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'vendor_layout.html' %}
+{% block title %}Edit Item{% endblock %}
+{% block vendor_content %}
+    <h2>Edit Item: {{ item['item_name'] }}</h2>
+    <p class="page-subtitle">Update the details for this product.</p>
+
+    <div class="profile-section">
+        <!-- The form needs enctype for potential future image updates -->
+        <form action="{{ url_for('vendor_edit_item', item_id=item['id']) }}" method="post" enctype="multipart/form-data">
+            <div class="info-grid">
+                <div class="info-item full-span">
+                    <label for="itemName">Item Name</label>
+                    <input type="text" id="itemName" name="itemName" value="{{ item['item_name'] }}" required class="form-input">
+                </div>
+                <div class="info-item">
+                    <label for="itemCategory">Category</label>
+                    <input type="text" id="itemCategory" name="itemCategory" value="{{ item['category'] or '' }}" class="form-input">
+                </div>
+                <div class="info-item">
+                    <label for="itemPrice">Price</label>
+                    <input type="number" id="itemPrice" name="itemPrice" step="0.01" value="{{ item['price'] }}" required class="form-input">
+                </div>
+                <div class="info-item">
+                    <label for="itemUnit">Unit</label>
+                    <input type="text" id="itemUnit" name="itemUnit" value="{{ item['unit'] }}" required class="form-input">
+                </div>
+                <div class="info-item">
+                    <label for="stockStatus">Stock Status</label>
+                    <select id="stockStatus" name="stockStatus" class="form-input">
+                        <option value="In Stock" {% if item['stock_status'] == 'In Stock' %}selected{% endif %}>In Stock</option>
+                        <option value="Low Stock" {% if item['stock_status'] == 'Low Stock' %}selected{% endif %}>Low Stock</option>
+                        <option value="Out of Stock" {% if item['stock_status'] == 'Out of Stock' %}selected{% endif %}>Out of Stock</option>
+                    </select>
+                </div>
+                 <div class="info-item full-span">
+                    <label for="itemImage">Current Item Image</label>
+                    <img src="{{ url_for('static', filename='uploads/' + item['image_filename']) }}" alt="Current Image" class="current-item-image">
+                    <label for="newItemImage">Upload New Image (Optional)</label>
+                    <input type="file" id="newItemImage" name="newItemImage" class="form-input file-input" accept="image/*">
+                    <small>Leave blank to keep the current image.</small>
+                </div>
+            </div>
+            <div class="form-actions">
+                <a href="{{ url_for('vendor_manage_items') }}" class="btn-secondary">Cancel</a>
+                <button type="submit" class="action-btn-primary">Update Item</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

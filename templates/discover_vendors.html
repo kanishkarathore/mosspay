@@ -6,13 +6,11 @@
     <h2>Discover Green Vendors</h2>
     <p class="page-subtitle">Find and support local sustainable businesses near you.</p>
 
-    <!-- Search Bar -->
     <div class="search-bar">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         <input type="text" placeholder="Search for a product or shop...">
     </div>
 
-    <!-- Filter Bar with View Switcher -->
     <div class="filter-bar">
         <div class="filter-group">
             <a href="#" class="filter-btn active">All</a>
@@ -22,25 +20,20 @@
             <a href="#" class="filter-btn">Packages</a>
         </div>
         
-        <!-- View Switcher with Corrected Map Icon -->
         <div class="view-switcher">
             <button id="grid-view-btn" class="view-btn active">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
             </button>
             <button id="map-view-btn" class="view-btn">
-                <!-- This is the new, improved location icon SVG -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             </button>
         </div>
     </div>
 
-    <!-- Container for the Grid/List View -->
     <div id="list-view-content">
         <div class="vendor-grid">
-            
-            <!-- Vendor Card 1 -->
             <div class="vendor-card">
-                <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fHdlbGxuZXNzfGVufDB8fHx8MTY2NzE0NjU0NA&ixlib=rb-1.2.1&q=80&w=400" alt="Eco-Friendly Emporium" class="vendor-image">
+                 <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fHdlbGxuZXNzfGVufDB8fHx8MTY2NzE0NjU0NA&ixlib=rb-1.2.1&q=80&w=400" alt="Eco-Friendly Emporium" class="vendor-image">
                 <div class="vendor-card-content">
                     <h3>Eco-Friendly Emporium</h3>
                     <p class="vendor-location">Gwalior, MP | 1.5 km away</p>
@@ -52,8 +45,6 @@
                 </div>
                 <div class="vendor-card-footer"><a href="#" class="follow-btn">Follow</a></div>
             </div>
-
-            <!-- Vendor Card 2 -->
             <div class="vendor-card">
                 <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGdyb2Nlcnl8ZW58MHx8fHwxNjY3MTQ2NjE4&ixlib=rb-1.2.1&q=80&w=400" alt="GreenLeaf Goods" class="vendor-image">
                 <div class="vendor-card-content">
@@ -67,8 +58,6 @@
                 </div>
                 <div class="vendor-card-footer"><a href="#" class="follow-btn">Follow</a></div>
             </div>
-
-            <!-- Vendor Card 3 -->
             <div class="vendor-card">
                 <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fGZhc2hpb258ZW58MHx8fHwxNjY3MTQ2NjQ2&ixlib=rb-1.2.1&q=80&w=400" alt="SustainaStyle Styles" class="vendor-image">
                 <div class="vendor-card-content">
@@ -85,14 +74,12 @@
         </div>
     </div>
 
-    <!-- Container for the Map View -->
     <div id="map-view-content" style="display: none;">
         <div class="map-placeholder">
             <p>Map view is loading...</p>
         </div>
     </div>
 
-    <!-- JavaScript for the switcher -->
     <script>
         const gridViewBtn = document.getElementById('grid-view-btn');
         const mapViewBtn = document.getElementById('map-view-btn');

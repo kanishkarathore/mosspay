@@ -13,7 +13,7 @@
                 <span>320</span><span>240</span><span>160</span><span>80</span><span>0</span>
             </div>
             <div class="chart-area-container">
-                <div class="chart-area"></div>
+                <div class="chart-area"></div> <!-- Animated wave -->
             </div>
             <div class="chart-axis x-axis">
                 <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
@@ -28,7 +28,7 @@
             <h4>Customer Demographics</h4>
             <p class="chart-subtitle">New vs. Repeat customers who have redeemed your offers.</p>
             <div class="pie-chart-container">
-                <div class="pie-chart new-vs-repeat"></div>
+                <div class="pie-chart new-vs-repeat"></div> <!-- Conic gradient background -->
                 <div class="pie-chart-legend">
                     <div class="legend-item new-customer"><span>New Customers (40%)</span></div>
                     <div class="legend-item repeat-customer"><span>Repeat Customers (60%)</span></div>
@@ -64,7 +64,7 @@
             <h4>Gender Demographics</h4>
             <p class="chart-subtitle">Gender distribution of your customers.</p>
              <div class="pie-chart-container">
-                <div class="pie-chart gender"></div>
+                <div class="pie-chart gender"></div> <!-- Conic gradient background -->
                 <div class="pie-chart-legend">
                     <div class="legend-item male-customer"><span>Male (45%)</span></div>
                     <div class="legend-item female-customer"><span>Female (55%)</span></div>
@@ -74,24 +74,27 @@
     </div>
 
     <!-- Top Redeemed Offers Section -->
-    <div class="profile-section">
+    <div class="profile-section"> {# Reuse profile-section class #}
         <div class="section-top-bar">
             <h3>Top Redeemed Offers</h3>
             <p class="section-description">Your most popular offers among customers.</p>
         </div>
-        <div class="offer-list">
-            <div class="offer-item">
+        <div class="offer-list"> {# Reuse offer-list class #}
+            <!-- Example Offer Item -->
+            <div class="offer-item"> {# Reuse offer-item class #}
                 <div class="offer-details">
                     <h4>20% off on all organic vegetables</h4>
                     <div class="offer-meta"><span>388 redemptions</span></div>
                 </div>
             </div>
+            <!-- Example Offer Item -->
             <div class="offer-item">
                 <div class="offer-details">
                     <h4>Free tote bag on orders over ₹1000</h4>
                     <div class="offer-meta"><span>315 redemptions</span></div>
                 </div>
             </div>
+             <!-- Add more top offers here -->
         </div>
     </div>
 {% endblock %}

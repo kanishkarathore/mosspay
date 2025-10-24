@@ -6,7 +6,8 @@
     <div class="chat-container">
         <header class="chat-header">
             <div class="chat-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.92V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10.92a2 2 0 0 0 .93 1.76l8.07 4.68a2 2 0 0 0 2 0l8.07-4.68A2 2 0 0 0 21 16.92z"></path><path d="M12 22V12"></path></svg>
+                <!-- Shield Icon (Example) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
             </div>
             <h2>Eco-Advisor</h2>
         </header>
@@ -18,6 +19,7 @@
                     Hello! I'm your Eco-Advisor. You can ask me things like, "Where can I find sustainable fashion?" or "What's an impactful purchase?"
                 </div>
             </div>
+            <!-- Chat messages will be added here by JavaScript -->
         </div>
 
         <footer class="chat-input-area">
@@ -40,13 +42,10 @@
             const userMessage = messageInput.value.trim();
 
             if (userMessage) {
-                // 1. Display the user's message
                 addMessage(userMessage, 'user-message');
-
-                // 2. Clear the input field
                 messageInput.value = '';
 
-                // 3. Simulate a bot response (for now, it just echoes)
+                // Simulate bot response
                 setTimeout(() => {
                     const botResponse = `You asked: "${userMessage}". I am still learning, but I will be able to answer this soon!`;
                     addMessage(botResponse, 'bot-message');
@@ -65,7 +64,6 @@
             messageDiv.appendChild(bubbleDiv);
             chatHistory.appendChild(messageDiv);
 
-            // Scroll to the bottom to see the latest message
             chatHistory.scrollTop = chatHistory.scrollHeight;
         }
     </script>

@@ -3,18 +3,16 @@
 {% block title %}User Dashboard{% endblock %}
 
 {% block dashboard_content %}
-    <h2>Welcome back!</h2>
+    <h2>Welcome back, {{ user['full_name'].split()[0] if user else 'User' }}!</h2>
 
     <div class="card moss-balance-card">
-        <!-- ... MossCoin Balance card content remains the same ... -->
         <div class="card-content">
             <span class="card-label">MossCoin Balance</span>
-            <span class="card-value">150.5</span>
+            <span class="card-value">{{ "%.1f"|format(user['moss_coins'] if user else 0.0) }}</span>
             <span class="card-subtitle">Coins earned from green purchases</span>
         </div>
     </div>
 
-    <!-- Scrolling Promo Banner remains the same -->
     <div class="promo-banner">
         <div class="promo-scroller">
             <span>Get 15% off at Indian Coffee House!</span>
@@ -29,10 +27,13 @@
     </div>
 
     <div class="card green-sprout-card">
-        <!-- ... Green Sprout card content remains the same ... -->
-        <div class="card-header"><h3>My Green Sprout</h3></div>
+        <div class="card-header">
+            <h3>My Green Sprout</h3>
+        </div>
         <div class="card-content">
-            <div class="sprout-icon"><span>🌳</span></div>
+            <div class="sprout-icon">
+                <span>🌳</span>
+            </div>
             <div class="sprout-stats">
                 <span class="stat-value">12.3 kg</span>
                 <span class="stat-label">Total CO₂ Saved</span>
@@ -45,14 +46,24 @@
     </div>
 
     <div class="stats-grid">
-        <!-- ... Stats grid content remains the same ... -->
-        <div class="stat-card"><span class="stat-value">12.3 kg</span><span class="stat-label">CO₂ Saved</span></div>
-        <div class="stat-card"><span class="stat-value">5</span><span class="stat-label">Green Purchases</span></div>
-        <div class="stat-card"><span class="stat-value">8 days</span><span class="stat-label">Eco-Streak</span></div>
-        <div class="stat-card"><span class="stat-value">#240</span><span class="stat-label">Rank</span></div>
+        <div class="stat-card">
+            <span class="stat-value">12.3 kg</span>
+            <span class="stat-label">CO₂ Saved</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value">5</span>
+            <span class="stat-label">Green Purchases</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value">8 days</span>
+            <span class="stat-label">Eco-Streak</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value">#240</span>
+            <span class="stat-label">Rank</span>
+        </div>
     </div>
     
-    <!-- NEW: Quick Actions Section -->
     <div class="quick-actions">
         <h4>Quick Actions</h4>
         <a href="{{ url_for('scan_pay') }}" class="btn-scan">
@@ -74,5 +85,4 @@
             </a>
         </div>
     </div>
-
 {% endblock %}

@@ -66,6 +66,7 @@
                     <span class="friend-name">Jane Smith</span>
                     <span class="status-badge success">Success</span>
                 </div>
+                <!-- Add more referral items as needed -->
             </div>
         </div>
     </div>
@@ -76,14 +77,24 @@
         const referralCode = document.getElementById('referral-code').innerText;
 
         copyBtn.addEventListener('click', () => {
-            navigator.clipboard.writeText(referralCode).then(() => {
+            // Use fallback for security restrictions in iframes/sandboxes
+            try {
+                const textArea = document.createElement("textarea");
+                textArea.value = referralCode;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+
                 copyBtn.innerText = 'Copied!';
                 setTimeout(() => {
                     copyBtn.innerText = 'Copy';
-                }, 2000); // Revert back to 'Copy' after 2 seconds
-            }).catch(err => {
-                console.error('Failed to copy text: ', err);
-            });
+                }, 2000);
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+                // Optionally show a message to the user to copy manually
+                alert('Could not copy automatically. Please copy the code manually: ' + referralCode);
+            }
         });
     </script>
 {% endblock %}

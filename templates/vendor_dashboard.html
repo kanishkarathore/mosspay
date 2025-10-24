@@ -1,5 +1,6 @@
 {% extends 'vendor_layout.html' %}
 {% block title %}Vendor Dashboard{% endblock %}
+
 {% block vendor_content %}
     <div class="dashboard-header-with-actions">
         <h2>Dashboard</h2>
@@ -15,37 +16,32 @@
     <!-- Stats Grid -->
     <div class="vendor-stats-grid">
         <div class="stat-card">
-            <div class="stat-header"><span class="card-label">Total Redemptions (Month)</span><!-- icon --></div>
+            <div class="stat-header"><span class="card-label">Total Redemptions (Month)</span></div>
             <span class="stat-value">1,250</span>
             <span class="stat-change">+2.1% from last month</span>
         </div>
         <div class="stat-card">
-            <div class="stat-header"><span class="card-label">New Customers via MossPay</span><!-- icon --></div>
+            <div class="stat-header"><span class="card-label">New Customers via MossPay</span></div>
             <span class="stat-value">82</span>
             <span class="stat-change">+15 from last month</span>
         </div>
         <div class="stat-card">
-            <div class="stat-header"><span class="card-label">Total CO₂ Saved by Your Customers</span><!-- icon --></div>
+            <div class="stat-header"><span class="card-label">Total CO₂ Saved by Your Customers</span></div>
             <span class="stat-value">450 kg</span>
             <span class="stat-change">All time</span>
         </div>
          <div class="stat-card">
-            <div class="stat-header"><span class="card-label">Number of Customers Today</span><!-- icon --></div>
+            <div class="stat-header"><span class="card-label">Number of Customers Today</span></div>
             <span class="stat-value">12</span>
             <span class="stat-change">Today</span>
         </div>
-    </div>
-
-    <!-- Chart Card -->
-    <div class="card chart-card">
-        <!-- ... chart content ... -->
     </div>
 
     <!-- Quick Actions Section -->
     <div class="quick-actions">
         <h4>Quick Actions</h4>
         <div class="vendor-actions-grid">
-            <a href="{{ url_for('vendor_generate_bill') }}" class="quick-action-item">
+            <a href="#" id="generate-bill-btn" class="quick-action-item">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                 <span>Generate Bill</span>
             </a>
@@ -55,4 +51,13 @@
             </a>
         </div>
     </div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Script to pass item data to the layout's JavaScript -->
+<script>
+  // THIS IS THE FIX: Wrap the Jinja in quotes and use JSON.parse
+  // This makes the JavaScript linter happy and still works in the browser
+  const vendorItems = JSON.parse('{{ items | tojson | safe }}');
+</script>
 {% endblock %}
