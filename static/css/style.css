@@ -651,9 +651,7 @@ body.dashboard-body {
     color: var(--text-light);
 }
 
-.user-profile { /* Container for avatar */
-     /* No changes needed here, just ensure it exists */
-}
+
 
 .user-avatar { /* Style for the avatar circle */
     width: 36px; /* Slightly smaller avatar */
