@@ -3447,3 +3447,112 @@ input:checked + .slider:before { transform: translateX(18px); }
   height: 100%;
   object-fit: cover; /* Ensures the image covers the area, cropping if needed */
 }
+
+/* =====================================
+  VENDOR CARD STYLES
+  =====================================
+  Add this to your style.css. 
+  You can adapt class names if you already have card styles.
+*/
+
+.vendor-card {
+  background-color: #2E4B4B; /* Darker teal, from your theme */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.vendor-card-image {
+  width: 100%;
+  height: 180px; /* Or your preferred height */
+  overflow: hidden;
+}
+
+.vendor-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes the image cover the area nicely */
+  transition: transform 0.3s ease;
+}
+
+.vendor-card:hover .vendor-card-image img {
+  transform: scale(1.05); /* A nice little zoom on hover */
+}
+
+.vendor-card-content {
+  padding: 1.2rem;
+  color: #E0E0E0; /* Light text for dark background */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.vendor-category-tag {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFF;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  align-self: flex-start; /* Aligns tag to the left */
+}
+
+.vendor-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 0 5px 0;
+}
+
+.vendor-location {
+  font-size: 0.9rem;
+  color: #B0B0B0; /* Slightly dimmer text */
+  margin-bottom: 15px;
+}
+
+.vendor-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Makes description fill space */
+}
+
+.vendor-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #3a5c5c; /* Subtle separator line */
+  padding-top: 15px;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.vendor-metric-mosspay {
+  font-size: 0.9rem;
+  color: #50C878; /* A bright "MossPay" green */
+}
+
+.btn-details {
+  background-color: #4CAF50; /* Or your theme's primary button color */
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-details:hover {
+  background-color: #45a049;
+}
+
+
+/* Add this anywhere in your CSS file */
+.hidden {
+  display: none;
+}
