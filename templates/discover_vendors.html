@@ -8,16 +8,17 @@
 
     <div class="search-bar">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" placeholder="Search for a product or shop...">
+        <input type="text" id="vendor-search" placeholder="Search for a product or shop...">
     </div>
 
     <div class="filter-bar">
-        <div class="filter-group">
-            <a href="#" class="filter-btn active">All</a>
-            <a href="#" class="filter-btn">Food</a>
-            <a href="#" class="filter-btn">Fashion</a>
-            <a href="#" class="filter-btn">Crafts</a>
-            <a href="#" class="filter-btn">Packages</a>
+        <div class="filter-group" id="category-filters">
+            <span>Filter by:</span>
+            <a href="#" class="filter-btn active" data-filter="all">All</a>
+            <a href="#" class="filter-btn" data-filter="food">Food</a>
+            <a href="#" class="filter-btn" data-filter="fashion">Fashion</a>
+            <a href="#" class="filter-btn" data-filter="crafts">Crafts</a>
+            <a href="#" class="filter-btn" data-filter="packages">Packages</a>
         </div>
         
         <div class="view-switcher">
@@ -31,9 +32,10 @@
     </div>
 
     <div id="list-view-content">
-        <div class="vendor-grid">
-            <div class="vendor-card">
-                 <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fHdlbGxuZXNzfGVufDB8fHx8MTY2NzE0NjU0NA&ixlib=rb-1.2.1&q=80&w=400" alt="Eco-Friendly Emporium" class="vendor-image">
+        <div class="vendor-grid" id="vendor-grid">
+            
+            <div class="vendor-card" data-category="food" data-name="Eco-Friendly Emporium">
+                <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?w=400" alt="Eco-Friendly Emporium" class="vendor-image">
                 <div class="vendor-card-content">
                     <h3>Eco-Friendly Emporium</h3>
                     <p class="vendor-location">Gwalior, MP | 1.5 km away</p>
@@ -45,8 +47,9 @@
                 </div>
                 <div class="vendor-card-footer"><a href="#" class="follow-btn">Follow</a></div>
             </div>
-            <div class="vendor-card">
-                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGdyb2Nlcnl8ZW58MHx8fHwxNjY3MTQ2NjE4&ixlib=rb-1.2.1&q=80&w=400" alt="GreenLeaf Goods" class="vendor-image">
+
+            <div class="vendor-card" data-category="food" data-name="GreenLeaf Goods">
+                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400" alt="GreenLeaf Goods" class="vendor-image">
                 <div class="vendor-card-content">
                     <h3>GreenLeaf Goods</h3>
                     <p class="vendor-location">Indore, MP | 4.2 km away</p>
@@ -54,12 +57,13 @@
                         <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
                         <span>4.8</span>
                     </div>
-                    <div class="vendor-tags"><span class="tag">Groceries</span></div>
+                     <div class="vendor-tags"><span class="tag">Groceries</span></div>
                 </div>
                 <div class="vendor-card-footer"><a href="#" class="follow-btn">Follow</a></div>
             </div>
-            <div class="vendor-card">
-                <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fGZhc2hpb258ZW58MHx8fHwxNjY3MTQ2NjQ2&ixlib=rb-1.2.1&q=80&w=400" alt="SustainaStyle Styles" class="vendor-image">
+
+            <div class="vendor-card" data-category="fashion" data-name="SustainaStyle Styles">
+                <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=400" alt="SustainaStyle Styles" class="vendor-image">
                 <div class="vendor-card-content">
                     <h3>SustainaStyle Styles</h3>
                     <p class="vendor-location">Bhopal, MP | 8.2 km away</p>
@@ -67,37 +71,108 @@
                         <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
                         <span>4.2</span>
                     </div>
-                    <div class="vendor-tags"><span class="tag">Fashion</span></div>
+                     <div class="vendor-tags"><span class="tag">Fashion</span></div>
                 </div>
                 <div class="vendor-card-footer"><a href="#" class="follow-btn">Follow</a></div>
             </div>
+
+            <div class="vendor-card" data-category="crafts" data-name="Earthly Crafts">
+                <img src="https://picsum.photos/seed/crafts/400/200" alt="Crafts" class="vendor-image">
+                <div class="vendor-card-content">
+                    <h3>Earthly Crafts</h3>
+                    <p class="vendor-location">Gwalior, MP | 2.5 km away</p>
+                    <div class="vendor-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <span>4.7</span>
+                    </div>
+                     <div class="vendor-tags"><span class="tag">Handmade</span><span class="tag">Crafts</span></div>
+                </div>
+                <div class="vendor-card-footer"><a href="#" class="follow-btn">Follow</a></div>
+            </div>
+
+            <div class="vendor-card" data-category="packages" data-name="EcoPack Solutions">
+                <img src="https://picsum.photos/seed/packages/400/200" alt="Packages" class="vendor-image">
+                <div class="vendor-card-content">
+                    <h3>EcoPack Solutions</h3>
+                    <p class="vendor-location">Indore, MP | 5.0 km away</p>
+                    <div class="vendor-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <span>4.9</span>
+                    </div>
+                     <div class="vendor-tags"><span class="tag">Packaging</span><span class="tag">B2B</span></div>
+                </div>
+                <div class="vendor-card-footer"><a href="#" class="follow-btn">Follow</a></div>
+            </div>
+
         </div>
+        <p id="no-vendors-found" class="page-subtitle" style="display: none; text-align: center; margin-top: 40px;">No vendors found matching your criteria.</p>
     </div>
 
-    <div id="map-view-content" style="display: none;">
-        <div class="map-placeholder">
-            <p>Map view is loading...</p>
-        </div>
-    </div>
+<div class="map-placeholder-container">
+  <img src="{{ url_for('static', filename='images/dark-map.png') }}" alt="Map view is loading...">
+</div>
 
     <script>
-        const gridViewBtn = document.getElementById('grid-view-btn');
-        const mapViewBtn = document.getElementById('map-view-btn');
-        const listViewContent = document.getElementById('list-view-content');
-        const mapViewContent = document.getElementById('map-view-content');
+        document.addEventListener('DOMContentLoaded', () => {
+            const gridViewBtn = document.getElementById('grid-view-btn');
+            const mapViewBtn = document.getElementById('map-view-btn');
+            const listViewContent = document.getElementById('list-view-content');
+            const mapViewContent = document.getElementById('map-view-content');
 
-        gridViewBtn.addEventListener('click', () => {
-            listViewContent.style.display = 'block';
-            mapViewContent.style.display = 'none';
-            gridViewBtn.classList.add('active');
-            mapViewBtn.classList.remove('active');
-        });
+            if (gridViewBtn) {
+                gridViewBtn.addEventListener('click', () => {
+                    listViewContent.style.display = 'block';
+                    mapViewContent.style.display = 'none';
+                    gridViewBtn.classList.add('active');
+                    mapViewBtn.classList.remove('active');
+                });
+            }
+            if (mapViewBtn) {
+                mapViewBtn.addEventListener('click', () => {
+                    listViewContent.style.display = 'none';
+                    mapViewContent.style.display = 'block';
+                    mapViewBtn.classList.add('active');
+                    gridViewBtn.classList.remove('active');
+                });
+            }
 
-        mapViewBtn.addEventListener('click', () => {
-            listViewContent.style.display = 'none';
-            mapViewContent.style.display = 'block';
-            mapViewBtn.classList.add('active');
-            gridViewBtn.classList.remove('active');
+            const filterButtons = document.querySelectorAll('#category-filters .filter-btn');
+            const vendorCards = document.querySelectorAll('#vendor-grid .vendor-card');
+            const searchInput = document.getElementById('vendor-search');
+            const noResultsMsg = document.getElementById('no-vendors-found');
+            let currentCategory = 'all';
+
+            const performFilter = () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                let foundVendor = false;
+
+                vendorCards.forEach(card => {
+                    const category = card.dataset.category;
+                    const name = card.dataset.name.toLowerCase();
+                    const categoryMatch = (currentCategory === 'all' || category === currentCategory);
+                    const searchMatch = (name.includes(searchTerm));
+
+                    if (categoryMatch && searchMatch) {
+                        card.classList.remove('hidden');
+                        foundVendor = true;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                noResultsMsg.style.display = foundVendor ? 'none' : 'block';
+            };
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    currentCategory = button.dataset.filter;
+                    performFilter();
+                });
+            });
+
+            searchInput.addEventListener('keyup', performFilter);
         });
     </script>
 {% endblock %}

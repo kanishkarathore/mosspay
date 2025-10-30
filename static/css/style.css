@@ -652,7 +652,6 @@ body.dashboard-body {
 }
 
 
-
 .user-avatar { /* Style for the avatar circle */
     width: 36px; /* Slightly smaller avatar */
     height: 36px;
@@ -3403,3 +3402,48 @@ input:checked + .slider:before { transform: translateX(18px); }
 }
 
 /* --- END OF GENERATE BILL MODAL STYLES --- */
+
+
+
+/* --- Add to end of style.css --- */
+
+/* Style for hidden vendor cards */
+.vendor-card.hidden {
+    display: none;
+}
+
+
+
+.map-placeholder-container {
+  position: relative; /* Needed to position the overlay */
+  width: 100%;
+  max-height: 450px; /* Set a max-height so it doesn't get too tall */
+  background-color: #2E4B4B; /* Fallback color */
+  border-radius: 8px;
+  overflow: hidden; /* Clips the image to the rounded corners */
+}
+
+/* Styles the image itself */
+.map-placeholder-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area, cropping if needed */
+}
+
+.map-placeholder-container {
+  position: relative; /* This is still good to keep */
+  width: 100%;
+  max-height: 450px; /* Set a max-height so it doesn't get too tall */
+  background-color: #2E4B4B; /* Fallback color */
+  border-radius: 8px;
+  overflow: hidden; /* Clips the image to the rounded corners */
+}
+
+/* Styles the image itself */
+.map-placeholder-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area, cropping if needed */
+}
